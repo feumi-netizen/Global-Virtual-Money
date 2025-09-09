@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>GVM — La Monnaie Virtuelle Mondiale</title>
+  <meta name="description" content="GVM — Une seule monnaie, un seul monde. Monnaie virtuelle accessible via mobile pour paiements instantanés, épargne et transferts internationaux." />
+  <style>
+    :root{
+      --bg:#061425;
+      --panel:#071827;
+      --accent:#00d0c1; /* turquoise */
+      --accent-2:#00a6ff;
+      --muted:#9aa8b3;
+      --glass: rgba(255,255,255,0.04);
+      --card: linear-gradient(135deg, rgba(0,208,193,0.08), rgba(0,166,255,0.04));
+      font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:radial-gradient(circle at 10% 10%, rgba(0,166,255,0.03), transparent 10%), linear-gradient(180deg,var(--bg), #020613);color:#e6f2f5}
+    .wrap{max-width:1100px;margin:0 auto;padding:28px}
+
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:800;color:#02121a;font-size:20px;box-shadow:0 6px 20px rgba(0,160,180,0.12)}
+    h1.title{font-size:28px;margin:0}
+    .nav{display:flex;gap:16px}
+    .nav a{color:var(--muted);text-decoration:none}
+
+    .hero{display:grid;grid-template-columns:1fr 420px;gap:28px;align-items:center;margin-top:14px}
+    .hero-card{background:var(--panel);padding:28px;border-radius:14px;box-shadow:0 10px 30px rgba(0,0,0,0.5);border:1px solid rgba(255,255,255,0.03)}
+    .kicker{color:var(--accent);font-weight:700;letter-spacing:0.6px}
+    .hero p.lead{color:var(--muted);line-height:1.6}
+
+    .preview{height:300px;border-radius:12px;background:linear-gradient(135deg, rgba(0,208,193,0.06), transparent 40%), url('') center/cover no-repeat;display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.03)}
+    .btn{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#02121a;padding:12px 18px;border-radius:10px;border:none;font-weight:700;cursor:pointer;box-shadow:0 8px 30px rgba(0,166,255,0.12)}
+
+    section{margin-top:30px}
+    .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .card{background:var(--glass);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:6px 0 8px}
+    .muted{color:var(--muted)}
+
+    .how{display:flex;gap:18px}
+    .how-step{flex:1;background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent);padding:16px;border-radius:10px}
+
+    footer{margin-top:40px;padding:22px 0;color:var(--muted);display:flex;justify-content:space-between;align-items:center}
+
+    /* Responsive */
+    @media(max-width:900px){
+      .hero{grid-template-columns:1fr;}
+      .grid3{grid-template-columns:1fr}
+      .nav{display:none}
+    }
+
+    /* small UI touches for futurist look */
+    .neon{position:relative}
+    .neon:after{content:'';position:absolute;inset:0;border-radius:8px;box-shadow:0 0 30px rgba(0,208,193,0.07);pointer-events:none}
+
+    /* contact form */
+    .form-row{display:flex;gap:10px}
+    .form-row input,textarea{flex:1;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit}
+    textarea{min-height:120px}
+    .small{font-size:13px;color:var(--muted)}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo">GVM</div>
+        <div>
+          <h1 class="title">GVM — La Monnaie Virtuelle Mondiale</h1>
+          <div class="small muted">Une seule monnaie, un seul monde</div>
+        </div>
+      </div>
+      <nav class="nav">
+        <a href="#avantage">Avantages</a>
+        <a href="#marche">Marché</a>
+        <a href="#roadmap">Roadmap</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <div class="hero">
+      <div class="hero-card">
+        <div class="kicker">Problème</div>
+        <h2>Finances mondiales fragmentées, coûteuses et lentes</h2>
+        <p class="lead">GVM simplifie la vie : une monnaie virtuelle accessible par smartphone, conversions locales instantanées, transferts quasi-gratuits et inclusion pour les populations non bancarisées.</p>
+
+        <div style="margin-top:18px;display:flex;gap:12px;align-items:center">
+          <button class="btn" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Contactez-nous</button>
+          <button class="btn" style="background:transparent;border:1px solid rgba(255,255,255,0.05);color:var(--accent)" onclick="downloadPitch()">Télécharger Pitch Deck</button>
+        </div>
+
+        <div style="margin-top:18px;color:var(--muted);font-size:13px">Fondateur : <strong>FEUMI TCHEUTGNIA Parfait</strong></div>
+        <div style="margin-top:6px;color:var(--muted);font-size:13px">Partenaires : <strong>Core Teams</strong>, <strong>Equity</strong></div>
+      </div>
+
+      <div class="preview neon" aria-hidden="true">
+        <!-- Decorative 3D / abstract visual placeholder -->
+        <svg width="320" height="220" viewBox="0 0 320 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="g1" x1="0" x2="1"><stop offset="0" stop-color="#00d0c1" stop-opacity="0.9"/><stop offset="1" stop-color="#00a6ff" stop-opacity="0.95"/></linearGradient>
+          </defs>
+          <rect x="0" y="0" width="320" height="220" rx="12" fill="url(#g1)" opacity="0.06"/>
+          <g fill="none" stroke="#00d0c1" stroke-opacity="0.85" stroke-width="1">
+            <circle cx="160" cy="110" r="50"/>
+            <circle cx="160" cy="110" r="30"/>
+            <path d="M120 50 C150 80 170 60 200 90"/>
+            <path d="M80 170 C120 140 200 140 240 170"/>
+          </g>
+          <text x="24" y="190" fill="#bff6ef" font-size="14">GVM — Aperçu visuel</text>
+        </svg>
+      </div>
+    </div>
+
+    <section id="avantage">
+      <h3>Avantages clés</h3>
+      <div class="grid3">
+        <div class="card">
+          <h3>Accessibilité universelle</h3>
+          <div class="muted">Un simple smartphone suffit pour accéder à GVM, même sans compte bancaire traditionnel.</div>
+        </div>
+        <div class="card">
+          <h3>Frais réduits</h3>
+          <div class="muted">Transferts quasi gratuits et conversions locales à faible coût grâce au réseau d'affiliés.</div>
+        </div>
+        <div class="card">
+          <h3>Sécurité</h3>
+          <div class="muted">Architecture sécurisée (blockchain hybride / chiffrement) + IA anti-fraude.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="how">
+      <h3>Comment ça marche</h3>
+      <div class="how">
+        <div class="how-step">
+          <strong>1. Conversion</strong>
+          <div class="muted">Convertissez votre devise locale en GVM via un partenaire affilié.</div>
+        </div>
+        <div class="how-step">
+          <strong>2. Utilisation</strong>
+          <div class="muted">Payer, envoyer ou recevoir via QR Code ou identifiant utilisateur.</div>
+        </div>
+        <div class="how-step">
+          <strong>3. Épargne & Retrait</strong>
+          <div class="muted">Épargnez, investissez automatiquement via outils IA, ou reconvertissez en monnaie locale.</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="marche">
+      <h3>Marché & modèle économique</h3>
+      <div class="card">
+        <div style="display:flex;gap:30px;align-items:center">
+          <div style="flex:1">
+            <div class="muted">Phase 1 : 17 pays d'Afrique subsaharienne (cible initiale)</div>
+            <h4 style="margin:6px 0">Adoption visée : 5% → 20M utilisateurs</h4>
+            <div class="muted">ARPU estimé : 10 € / an → Revenus annuels projetés: 200M € (stabilisation)</div>
+          </div>
+          <div style="width:140px;text-align:center">
+            <div style="font-weight:800;font-size:28px;color:var(--accent)">GVM</div>
+            <div class="small muted">Monnaie virtuelle mondiale</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="roadmap">
+      <h3>Roadmap (résumé)</h3>
+      <div class="grid3">
+        <div class="card"><strong>Prototype (0-6 mois)</strong><div class="muted">MVP mobile + tests</div></div>
+        <div class="card"><strong>Lancement pilote (6-18 mois)</strong><div class="muted">1 pays, agents physiques</div></div>
+        <div class="card"><strong>Expansion (18-36 mois)</strong><div class="muted">Extension régionale & services premium</div></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h3>Contact & Suivi</h3>
+      <div style="display:flex;gap:16px;flex-wrap:wrap">
+        <div style="flex:1;min-width:260px" class="card">
+          <div class="small muted">Adresse e‑mail</div>
+          <div style="font-weight:700">parfaitfeumi48@gmail.com</div>
+          <div style="margin-top:10px;color:var(--muted)">Pour les investisseurs, partenaires ou demandes médias, écrivez-nous.</div>
+        </div>
+
+        <div style="flex:1;min-width:260px" class="card">
+          <form id="contactForm" onsubmit="handleSubmit(event)">
+            <div class="small muted">Votre nom</div>
+            <input type="text" id="name" placeholder="Nom" required />
+            <div style="height:8px"></div>
+            <div class="small muted">Message</div>
+            <textarea id="message" placeholder="Expliquez brièvement votre demande" required></textarea>
+            <div style="height:10px"></div>
+            <button class="btn" type="submit">Envoyer</button>
+          </form>
+          <div id="status" class="small muted" style="margin-top:8px"></div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div>© {YEAR} GVM — FEUMI TCHEUTGNIA Parfait</div>
+      <div class="muted">Partenaires : Core Teams • Equity</div>
+    </footer>
+  </div>
+
+  <script>
+    // small helpers
+    document.body.querySelector('footer').innerHTML = document.body.querySelector('footer').innerHTML.replace('{YEAR}', new Date().getFullYear());
+
+    function downloadPitch(){
+      // placeholder: set to your pitch deck URL when hosted
+      alert('Téléchargement du pitch deck — lien à configurer.');
+    }
+
+    function handleSubmit(ev){
+      ev.preventDefault();
+      const name = document.getElementById('name').value.trim();
+      const message = document.getElementById('message').value.trim();
+      if(!name || !message) return;
+      // In production, send to your backend or email service
+      document.getElementById('status').textContent = 'Merci — votre message a été reçu (simulation).';
+      document.getElementById('contactForm').reset();
+    }
+  </script>
+</body>
+</html>
